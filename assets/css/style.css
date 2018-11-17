@@ -1,0 +1,23 @@
+body {
+    font-size: 25px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#instructions {
+    border: 1px solid black;
+    font-weight: 900;
+    font-size: 30px;
+}
+#questions {
+    font-size: 25px;
+}
+#in-game  {
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+    height: 50%;
+    width: 50%;
+    z-index: 1000px;
+    border: 1px solid black;
+}
+/*==== z-index to raise the question div to the forefront with a separate background. color not image? =====*\
