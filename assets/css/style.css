@@ -1,9 +1,12 @@
 body {
+    background-image: url("/Users/daniwood/Documents/UCF/MyWork/TriviaGame/assets/images/background.jpg");
+    background-size: 100%;
     font-size: 25px;
     font-family: 'Indie Flower', cursive;
 }
 
 #instructions {
+    background-color: rgb(145, 185, 238);
     border: 1px solid black;
     font-weight: 900;
     font-size: 30px;
@@ -12,6 +15,7 @@ body {
     font-size: 25px;
 }
 #in-game  {
+    background-color: plum;
     padding: 15px;
     margin: auto;
     text-align: center;
