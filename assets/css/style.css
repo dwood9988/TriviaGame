@@ -7,7 +7,7 @@ body {
 
 #instructions {
     background-color: rgb(145, 185, 238);
-    border: 1px solid white;
+    border: 2px solid white;
     font-weight: 900;
     font-size: 30px;
 }
@@ -17,7 +17,7 @@ body {
     text-align: center;
     height: 200px;
     width: 200px;
-    border: 1px solid white;
+    border: 2px solid white;
     margin: -259px;
     padding: 27px;
 }
@@ -30,8 +30,7 @@ body {
     margin: auto;
     text-align: center;
     height: 50%;
-    width: 50%;
-    z-index: 1000px;
-    border: 1px solid white;
+    width: 58%;
+    border: 2px solid white;
 }
 /*==== z-index to raise the question div to the forefront with a separate background. color not image? =====*\
