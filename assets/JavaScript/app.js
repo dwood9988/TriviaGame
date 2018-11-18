@@ -82,27 +82,33 @@ $(document).ready(function () {
 
 
 
-    //get the value of the correct answers 
-    // var q1 = document.querySelector('input[name=q1]:checked');
-    // console.log(q1);
-    // var q2 = document.querySelector('input[name=q2]:checked');
-    // console.log(q2);
-    // var q3 = document.querySelector('input[name=q3]:checked');
-    // console.log(q3);
-    // var q4 = document.querySelector('input[name=q4]:checked');
-    // console.log(q4);
-    // var q5 = document.querySelector('input[name=q5]:checked');
-    // console.log(q5);
-    // var q6 = document.querySelector('input[name=q6]:checked');
-    // console.log(q6);
-    // var q7 = document.querySelector('input[name=q7]:checked');
-    // console.log(q7);
-    // var q8 = document.querySelector('input[name=q8]:checked');
-    // console.log(q8);
-    // var q9 = document.querySelector('input[name=q9]:checked');
-    // console.log(q9);
-    // var q10 = document.querySelector('input[name=q10]:checked');
-    // console.log(q10);
+  //get the value of the correct answers 
+  function checkAnswers() { 
+    var q1 = document.querySelector("input[name='q1']:checked").value;
+    console.log(q1);
+    var q2 = document.querySelector('input[name=q2]:checked').value;
+    console.log(q2);
+    var q3 = document.querySelector('input[name=q3]:checked').value;
+    console.log(q3);
+    var q4 = document.querySelector('input[name=q4]:checked').value;
+    console.log(q4);
+    var q5 = document.querySelector('input[name=q5]:checked').value;
+    console.log(q5);
+    var q6 = document.querySelector('input[name=q6]:checked').value;
+    console.log(q6);
+    var q7 = document.querySelector('input[name=q7]:checked').value;
+    console.log(q7);
+    var q8 = document.querySelector('input[name=q8]:checked').value;
+    console.log(q8);
+    var q9 = document.querySelector('input[name=q9]:checked').value;
+    console.log(q9);
+    var q10 = document.querySelector('input[name=q10]:checked').value;
+    console.log(q10);
+    };
+//need a on submit function that submits answers 
+    $("#submit").on("click", function(){
+        checkAnswers();
+    });
 
     //create a for loop that will traverse that array to compare the users choice to the correct or incorrect answers and increase the score counters 
     for (let i = 0; i < numOfQuestions.length; i++) {
@@ -124,7 +130,7 @@ $(document).ready(function () {
     }
 
     //set time out to 30 seconds per questions (5 total minutes...is that too long?)
-    //---done in the html - used radio---\\
+
 
     //create buttons (bootstrap or <button> in query) for the multiple choice answers 
     //---done in the html - used radio buttons---\\
@@ -136,7 +142,7 @@ $(document).ready(function () {
 
     //---if there's time---create gif that appears on a correct guess and if time create a separate one for an incorrect guess - maybe just one for the end? Fireworks?
 
-    //append html (instructions div? somewhere at the bottom. maybe to replace the my-4) at the end with the nuber of correct guesses, incorrect guesses, and unanswered questions.
+    //append html (instructions div? somewhere at the bottom. maybe to replace the my-4) at the end with the nuber of correct guesses, incorrect guesses, and unanswered questions then run the reset function to begin a new game. Restart button? Play Again? Just alert it if there's no time
 
     //create a button (new element?) with an onclick event that resets the questions, timer, and my-4 to the original text. 
     //---someday - set up an API to bring in new questions? I'd have to rework all my html, but go back and do this after graduation---\\
@@ -144,7 +150,4 @@ $(document).ready(function () {
 
 
 });
-//need a on submit function that submits answers 
-function onSubmit() {
-    alert("It's Working!")
-}
+
