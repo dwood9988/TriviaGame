@@ -7,21 +7,31 @@ body {
 
 #instructions {
     background-color: rgb(145, 185, 238);
-    border: 1px solid black;
+    border: 1px solid white;
     font-weight: 900;
     font-size: 30px;
+}
+#timer {
+    background-color: #25f3de94;
+    position: fixed;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+    margin: -259px;
+    padding: 27px;
 }
 #questions {
     font-size: 25px;
 }
 #in-game  {
-    background-color: plum;
+    background-color: #dda0ddc9;
     padding: 15px;
     margin: auto;
     text-align: center;
     height: 50%;
     width: 50%;
     z-index: 1000px;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 /*==== z-index to raise the question div to the forefront with a separate background. color not image? =====*\

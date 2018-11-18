@@ -6,122 +6,130 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Triva Game!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <script src="assets/JavaScript/app.js"></script>
 </head>
 
 <body>
-    <div id="in-game">
+    <form name="disney-quiz" onsubmit="return onSubmit()">
+        <div id="in-game">
+            <!--Instructions-->
+            <div id="instructions" class="jumbotron" style="text-align:center">
+                <h1 class="display-4">Welcome to Disney Trivia!</h1>
+                <p class="lead">All you need is faith, trust, and a little Pixie Dust!</p>
+                <hr id= "results" class="my-4">
+                <p>You have only 5 minutes to complete this quiz, so watch your timer and move fast!</p>
+                <div id="timer">Timer Goes Here
+                    <br>
+                    5:00
+                </div>
+            </div>
+            <br>
+            <div id="questions">
+                <!-- Question 1 -->
+                <h1>In Aladdin, what is the name of Jasmine’s pet tiger?</h1>
+                <br>
+                <form>
+                    <input type="radio" name="choice" value="Rajesh"> Rajesh
+                    <input type="radio" name="choice" value="Abu"> Abu
+                    <input type="radio" name="choice" value="Rajah"> Rajah
+                    <input type="radio" name="choice" value="Kitty"> Kitty
+                </form>
+                <br>
+                <!-- Question 2 -->
+                <h1>Which Disney princess has a raccoon for a sidekick?</h1>
+                <br>
+                <form>
+                    <input type="radio" name="choice" value="Tiana"> Tiana
+                    <input type="radio" name="choice" value="Pocahontas"> Pocahontas
+                    <input type="radio" name="choice" value="Aurora"> Aurora
+                    <input type="radio" name="choice" value="Merida"> Merida
+                </form>
+                <br>
+                <!-- Question 3 -->
+                <h1>In Finding Nemo, which country is Nemo taken to?</h1>
+                <br>
+                <form>
+                    <input type="radio" name="choice" value="Scripting"> Australia
+                    <input type="radio" name="choice" value="USA"> USA
+                    <input type="radio" name="choice" value="Italy"> Italy
+                    <input type="radio" name="choice" value="New Jersey"> New Jersey
+                </form>
+                <br>
+                <!-- Question 4 -->
+                <h1>What is the name of Bambi's rabbit friend?</h1>
+                <br>
+                <form>
+                    <input type="radio" name="choice" value="Jumper"> Jumper
+                    <input type="radio" name="choice" value="The White Rabbit"> The White Rabbit
+                    <input type="radio" name="choice" value="Thumper"> Thumper
+                    <input type="radio" name="choice" value="Little Bunny Foo Foo"> Little Bunny Foo Foo
+                </form>
+                <br>
+                <!-- Question 5 -->
+                <h1>What does Cinderella's fairy godmother turn into a carriage?</h1>
+                <br>
+                <form>
+                    <input type="radio" name="choice" value="A Squash"> A Squash
+                    <input type="radio" name="choice" value="A Mouse"> A Mouse
+                    <input type="radio" name="choice" value="Cinderella"> Cinderella
+                    <input type="radio" name="choice" value="A Pumpkin"> A Pumpkin
+                </form>
+                <br>
+                <!-- Question 6 -->
+                <h1>In Robin Hood, what type of animal is Robin?</h1><br>
+                <form>
+                    <input type="radio" name="choice" value="A Robin"> A Robin
+                    <input type="radio" name="choice" value="A Cat"> A Cat
+                    <input type="radio" name="choice" value="A Fox"> A Fox
+                    <input type="radio" name="choice" value="A Komodo Dragon"> A Komodo Dragon
+                </form>
+                <br>
+                <!-- Question 7 -->
+                <h1>What does Dumbo use to fly?</h1><br>
+                <form>
+                    <input type="radio" name="choice" value="His Wings"> His Wings
+                    <input type="radio" name="choice" value="A Feather"> A Feather
+                    <input type="radio" name="choice" value="His Ears"> His Ears
+                    <input type="radio" name="choice" value="Pixie Dust"> Pixie Dust
+                </form>
+                <br>
+                <!-- Question 8 -->
+                <h1>In Peter Pan, what is the name of Peter's fairy friend?</h1><br>
+                <form>
+                    <input type="radio" name="choice" value="Peach Blossom"> Peach Blossom
+                    <input type="radio" name="choice" value="Tinkerbell"> Tinkerbell
+                    <input type="radio" name="choice" value="Marge"> Marge
+                    <input type="radio" name="choice" value="Cobweb"> Cobweb
+                </form>
+                <br>
+                <!-- Question 9 -->
+                <h1>In The Little Mermaid, what are the names of Ursula's sidekicks?</h1>
+                <br>
+                <form>
+                    <input type="radio" name="choice" value="Sparky and Kilowatt"> Sparky and Kilowatt
+                    <input type="radio" name="choice" value="Frick and Frack"> Frick and Frack
+                    <input type="radio" name="choice" value="Joe and Tamara"> Joe and Tamara
+                    <input type="radio" name="choice" value="Flotsam and Jetsam"> Flotsam and Jetsam
+                </form>
+                <br>
+                <!-- Question 10 -->
+                <h1>What is the name of the Lion King?</h1><br>
+                <form>
+                    <input type="radio" name="choice" value="Scar"> Scar
+                    <input type="radio" name="choice" value="Nala"> Nala
+                    <input type="radio" name="choice" value="Simba"> Simba
+                    <input type="radio" name="choice" value="John Dinsmore"> John Dinsmore
+                </form>
+                <br>
+                <button class="btn btn-info btn-lg" type="submit">Submit Answers!</button>
 
-        <div id="instructions" style="text-align:center">
-            <h1>Welcome to Disney Trivia!</h1>
-            <p>Select your answer to move to the next question.</p>
-            <p>Good Luck!</p>
+            </div>
         </div>
-        <br>
-        <div id= "questions">
-        <!-- Question 1 -->
-        <h1>In Aladdin, what is the name of Jasmine’s pet tiger?</h1>
-        <br>
-        <form>
-            <input type="radio" name="choice" value="Rajesh"> Rajesh
-            <input type="radio" name="choice" value="Abu"> Abu
-            <input type="radio" name="choice" value="Rajah"> Rajah
-            <input type="radio" name="choice" value="Kitty"> Kitty
-        </form>
-        <br>
-        <!-- Question 2 -->
-        <h1>Which Disney princess has a raccoon for a sidekick?</h1>
-        <br>
-        <form>
-            <input type="radio" name="choice" value="Tiana"> Tiana
-            <input type="radio" name="choice" value="Pocahontas"> Pocahontas
-            <input type="radio" name="choice" value="Aurora"> Aurora
-            <input type="radio" name="choice" value="Merida"> Merida
-        </form>
-        <br>
-         <!-- Question 3 -->
-        <h1>In Finding Nemo, which country is Nemo taken to?</h1>
-        <br>
-        <form>
-            <input type="radio" name="choice" value="Scripting"> Australia
-            <input type="radio" name="choice" value="USA"> USA
-            <input type="radio" name="choice" value="Italy"> Italy
-            <input type="radio" name="choice" value="New Jersey"> New Jersey
-        </form>
-        <br>
- <!-- Question 4 -->
-        <h1>What is the name of Bambi's rabbit friend?</h1>
-        <br>
-        <form>
-            <input type="radio" name="choice" value="Jumper"> Jumper
-            <input type="radio" name="choice" value="The White Rabbit"> The White Rabbit
-            <input type="radio" name="choice" value="Thumper"> Thumper
-            <input type="radio" name="choice" value="Little Bunny Foo Foo"> Little Bunny Foo Foo
-        </form>
-        <br>
- <!-- Question 5 -->
-        <h1>What does Cinderella's fairy godmother turn into a carriage?</h1>
-        <br>
-        <form>
-            <input type="radio" name="choice" value="A Squash"> A Squash
-            <input type="radio" name="choice" value="A Mouse"> A Mouse
-            <input type="radio" name="choice" value="Cinderella"> Cinderella
-            <input type="radio" name="choice" value="A Pumpkin"> A Pumpkin
-        </form>
-        <br>
- <!-- Question 6 -->
-        <h1>In Robin Hood, what type of animal is Robin?</h1><br>
-        <form>
-            <input type="radio" name="choice" value="A Robin"> A Robin
-            <input type="radio" name="choice" value="A Cat"> A Cat
-            <input type="radio" name="choice" value="A Fox"> A Fox
-            <input type="radio" name="choice" value="A Komodo Dragon"> A Komodo Dragon
-        </form>
-        <br>
- <!-- Question 7 -->
-        <h1>What does Dumbo use to fly?</h1><br>
-        <form>
-            <input type="radio" name="choice" value="His Wings"> His Wings
-            <input type="radio" name="choice" value="A Feather"> A Feather
-            <input type="radio" name="choice" value="His Ears"> His Ears
-            <input type="radio" name="choice" value="Pixie Dust"> Pixie Dust
-        </form>
-        <br>
- <!-- Question 8 -->
- <h1>In Peter Pan, what is the name of Peter's fairy friend?</h1><br>
- <form>
-     <input type="radio" name="choice" value="Peach Blossom"> Peach Blossom 
-     <input type="radio" name="choice" value="Tinkerbell"> Tinkerbell
-     <input type="radio" name="choice" value="Marge"> Marge
-     <input type="radio" name="choice" value="Cobweb"> Cobweb
- </form>
- <br>
-  <!-- Question 9 -->
-  <h1>In The Little Mermaid, what are the names of Ursula's sidekicks?</h1>
-  <br>
-  <form>
-      <input type="radio" name="choice" value="Sparky and Kilowatt"> Sparky and Kilowatt
-      <input type="radio" name="choice" value="Frick and Frack"> Frick and Frack
-      <input type="radio" name="choice" value="Joe and Tamara"> Joe and Tamara
-      <input type="radio" name="choice" value="Flotsam and Jetsam"> Flotsam and Jetsam
-  </form>
-  <br>
-   <!-- Question 10 -->
-   <h1>What is the name of the Lion King?</h1><br>
-   <form>
-       <input type="radio" name="choice" value="Scar"> Scar
-       <input type="radio" name="choice" value="Nala"> Nala
-       <input type="radio" name="choice" value="Simba"> Simba
-       <input type="radio" name="choice" value="John Dinsmore"> John Dinsmore
-   </form>
-   <br>
-   <button class="btn btn-primary" type="submit">Submit Answers!</button>
-
-</div>
-    </div>
+    </form>
 
 
 
@@ -138,10 +146,12 @@
 
 
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
