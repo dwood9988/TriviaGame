@@ -1,3 +1,5 @@
+//document.ready function 
+// $(document).ready(function() {
 //create global variables 
 var numOfCorrect = 0;
 var numOfIncorrect = 0;
@@ -5,29 +7,36 @@ var numOfUnanswered = 0;
 var numOfQuestions = 10;
 //separate array for the correct anwers? maybe use the [i] to see if user guess matches a certain [i]?
 var ansArray = ['Rajah', 'Pocahontas', 'Australia', 'Thumper', 'A Pumpkin', 'A Fox', 'A Feather', 'Tinkerbell', 'Flotsam and Jetsam', 'Simba']
+console.log(ansArray);
+
 //get the value of the correct answers 
-var q1 = document.forms['disney-quiz']['q1'].value;
-var q2 = document.forms['disney-quiz']['q2'].value;
-var q3 = document.forms['disney-quiz']['q3'].value;
-var q4 = document.forms['disney-quiz']['q4'].value;
-var q5 = document.forms['disney-quiz']['q5'].value;
-var q6 = document.forms['disney-quiz']['q6'].value;
-var q7 = document.forms['disney-quiz']['q7'].value;
-var q8 = document.forms['disney-quiz']['q8'].value;
-var q9 = document.forms['disney-quiz']['q9'].value;
-var q10 = document.forms['disney-quiz']['q10'].value;
+var q1 = document.getElementById(q1c).innerHTML;
+var q2 = document.getElementById(q2b).innerHTML;
+var q3 = document.getElementById(q3a).innerHTML;
+var q4 = document.getElementById(q4c).innerHTML;
+var q5 = document.getElementById(q5d).innerHTML;
+var q6 = document.getElementById(q6c).innerHTML;
+var q7 = document.getElementById(q7b).innerHTML;
+var q8 = document.getElementById(q8b).innerHTML;
+var q9 = document.getElementById(q9d).innerHTML;
+var q10 = document.getElementById(q10c).innerHTML;
 
 //create a for loop that will traverse that array to compare the users choice to the correct or incorrect answers and increase the score counters 
 for (let i = 0; i < numOfQuestions.length; i++) {
     if (eval('q' + i) == '') {
         console.log("You missed question number " + i + "!");
-        numOfIncorrect++
+        numOfIncorrect++;
     }
 }
 for (let i = 0; i < numOfQuestions.length; i++) {
     if (eval('q' + i) == ansArray[i - 1]) {
         console.log("You answered question number " + i) + " correctly!";
-        numOfCorrect++
+        numOfCorrect++;
+    }
+    else {
+        numOfUnanswered++;
+        console.log("You didn't answer " + numOfUnanswered + " questions");
+        
     }
 }
 
@@ -54,3 +63,4 @@ for (let i = 0; i < numOfQuestions.length; i++) {
 function onSubmit() {
     alert("It's Working!")
 }
+// });
