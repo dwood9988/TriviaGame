@@ -14,12 +14,12 @@ $(document).ready(function () {
     var start;
     window.onload = function () {
         $("#reset").on("click", "btn btn-info btn-lg");
-        $("#start").on("click", name.q1);
+        $("#start").on("click", type.radio);
     };
 
     //separate array for the correct anwers? maybe use the [i] to see if user guess matches a certain [i]?
     var ansArray = ['Rajah', 'Pocahontas', 'Australia', 'Thumper', 'A Pumpkin', 'A Fox', 'A Feather', 'Tinkerbell', 'Flotsam and Jetsam', 'Simba']
-    console.log(ansArray);
+
     //reset function
     var timer = {
         reset: function () {
@@ -124,17 +124,17 @@ $(document).ready(function () {
     }
 
     //set time out to 30 seconds per questions (5 total minutes...is that too long?)
+    //---done in the html - used radio---\\
 
-
-    //---done in the html---\\
     //create buttons (bootstrap or <button> in query) for the multiple choice answers 
-    //---done in the html---\\
+    //---done in the html - used radio buttons---\\
+
     //make sure they are only allowed to register one answer
     //---done in the html---\\
 
 
 
-    //---if there's time---create gif that appears on a correct guess and if time create a separate one for an incorrect guess
+    //---if there's time---create gif that appears on a correct guess and if time create a separate one for an incorrect guess - maybe just one for the end? Fireworks?
 
     //append html (instructions div? somewhere at the bottom. maybe to replace the my-4) at the end with the nuber of correct guesses, incorrect guesses, and unanswered questions.
 
@@ -142,9 +142,9 @@ $(document).ready(function () {
     //---someday - set up an API to bring in new questions? I'd have to rework all my html, but go back and do this after graduation---\\
 
 
-   
+
 });
- //need a on submit function that submits answers 
- function onSubmit() {
+//need a on submit function that submits answers 
+function onSubmit() {
     alert("It's Working!")
 }
