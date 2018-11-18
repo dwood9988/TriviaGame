@@ -8,17 +8,16 @@ $(document).ready(function () {
     var numOfIncorrect = 0;
     var numOfUnanswered = 0;
     var numOfQuestions = 10;
-    var count = 50000;
+    var time = 300;
+    var converted;
     //run the on click timer function on the page load. 
     var reset;
     var start;
-    window.onload = function () {
-        $("#reset").on("click", "btn btn-info btn-lg");
-        $("#start").on("click", type.radio);
-    };
 
     //separate array for the correct anwers? maybe use the [i] to see if user guess matches a certain [i]?
     var ansArray = ['Rajah', 'Pocahontas', 'Australia', 'Thumper', 'A Pumpkin', 'A Fox', 'A Feather', 'Tinkerbell', 'Flotsam and Jetsam', 'Simba']
+
+    //set timer to 30 seconds per questions (5 total minutes...is that too long?)
 
     //reset function
     var timer = {
@@ -29,7 +28,7 @@ $(document).ready(function () {
         //start function
         start: function () {
             if (!timerRunning) {
-                intervalId = setInterval(timer.count, 1000);
+                intervalID = setInterval(count, 1000);
                 timerRunning = true;
             }
         },
@@ -39,13 +38,13 @@ $(document).ready(function () {
     function count() {
 
         time--;
-        var converted = timeConverter(time);
+        converted = timeConverter(time);
         $("#display").text(converted);
 
     }
     function timeConverter(t) {
 
-        var minutes = Math.floor(t / 5);
+        var minutes = Math.floor(t / 60);
         var seconds = t - (minutes * 60);
 
         if (seconds < 10) {
@@ -62,51 +61,48 @@ $(document).ready(function () {
         return minutes + ":" + seconds;
     }
     //time counter will tick per second.
-    var counter = setInterval(timer, 1000);
-    function timer() {
+    function runTimer() {
         count = count - 1;
-        console.log(count);
         if (count <= 0) {
-            clearInterval(counter);
+            clearInterval(intervalID);
             //counter ended, call reset?
             alert("Time's Up!");
             timerRunning = false;
         }
-        if (count <= 0) {
-            clearInterval(counter);
-            return;
-        }
 
-        document.getElementById("timer").innerHTML = count;
+        // document.getElementById("timer").innerHTML = converted;
     }
 
 
 
-  //get the value of the correct answers 
-  function checkAnswers() { 
-    var q1 = document.querySelector("input[name='q1']:checked").value;
-    console.log(q1);
-    var q2 = document.querySelector('input[name=q2]:checked').value;
-    console.log(q2);
-    var q3 = document.querySelector('input[name=q3]:checked').value;
-    console.log(q3);
-    var q4 = document.querySelector('input[name=q4]:checked').value;
-    console.log(q4);
-    var q5 = document.querySelector('input[name=q5]:checked').value;
-    console.log(q5);
-    var q6 = document.querySelector('input[name=q6]:checked').value;
-    console.log(q6);
-    var q7 = document.querySelector('input[name=q7]:checked').value;
-    console.log(q7);
-    var q8 = document.querySelector('input[name=q8]:checked').value;
-    console.log(q8);
-    var q9 = document.querySelector('input[name=q9]:checked').value;
-    console.log(q9);
-    var q10 = document.querySelector('input[name=q10]:checked').value;
-    console.log(q10);
+    //get the value of the correct answers 
+    function checkAnswers() {
+        var q1 = document.querySelector("input[name='q1']:checked").value;
+        console.log(q1);
+        var q2 = document.querySelector('input[name=q2]:checked').value;
+        console.log(q2);
+        var q3 = document.querySelector('input[name=q3]:checked').value;
+        console.log(q3);
+        var q4 = document.querySelector('input[name=q4]:checked').value;
+        console.log(q4);
+        var q5 = document.querySelector('input[name=q5]:checked').value;
+        console.log(q5);
+        var q6 = document.querySelector('input[name=q6]:checked').value;
+        console.log(q6);
+        var q7 = document.querySelector('input[name=q7]:checked').value;
+        console.log(q7);
+        var q8 = document.querySelector('input[name=q8]:checked').value;
+        console.log(q8);
+        var q9 = document.querySelector('input[name=q9]:checked').value;
+        console.log(q9);
+        var q10 = document.querySelector('input[name=q10]:checked').value;
+        console.log(q10);
     };
-//need a on submit function that submits answers 
-    $("#submit").on("click", function(){
+    //need a on submit function that submits answers 
+
+    timer.start();
+
+    $("#submit").on("click", function () {
         checkAnswers();
     });
 
@@ -129,14 +125,14 @@ $(document).ready(function () {
         }
     }
 
-    //set time out to 30 seconds per questions (5 total minutes...is that too long?)
+
 
 
     //create buttons (bootstrap or <button> in query) for the multiple choice answers 
     //---done in the html - used radio buttons---\\
 
     //make sure they are only allowed to register one answer
-    //---done in the html---\\
+    //---done in the html with the radio buttons---\\
 
 
 
@@ -150,4 +146,3 @@ $(document).ready(function () {
 
 
 });
-

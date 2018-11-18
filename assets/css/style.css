@@ -12,6 +12,7 @@ body {
     font-size: 30px;
 }
 #timer {
+    font-size: 60px;
     background-color: #25f3de94;
     position: fixed;
     text-align: center;
@@ -19,7 +20,7 @@ body {
     width: 200px;
     border: 2px solid white;
     margin: -259px;
-    padding: 27px;
+    padding: 17px;
 }
 #questions {
     font-size: 25px;
