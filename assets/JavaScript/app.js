@@ -96,15 +96,19 @@ $(document).ready(function () {
     };
     //need a on submit function that submits answers 
 
-    timer.start();
+    $("#questions").on("click", function () {
+        timer.start();
+        runTimer();
+    });
 
     $("#submit").on("click", function () {
         checkAnswers();
+        timer.reset();
     });
 
     //create a for loop that will traverse that array to compare the users choice to the correct or incorrect answers and increase the score counters 
     for (let i = 0; i < numOfQuestions.length; i++) {
-        if (eval('q' + i) == '') {
+        if (eval('q' + i) != ansArray[i - 1]) {
             console.log("You missed question number " + i + "!");
             numOfIncorrect++;
         }
