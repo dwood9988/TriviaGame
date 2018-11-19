@@ -15,7 +15,7 @@ $(document).ready(function () {
     var start;
 
     //separate array for the correct anwers? maybe use the [i] to see if user guess matches a certain [i]?
-    var ansArray = ['Rajah', 'Pocahontas', 'Australia', 'Thumper', 'A Pumpkin', 'A Fox', 'A Feather', 'Tinkerbell', 'Flotsam and Jetsam', 'Simba']
+    var ansArray = ['placeholder', 'Rajah', 'Pocahontas', 'Australia', 'Thumper', 'A Pumpkin', 'A Fox', 'A Feather', 'Tinkerbell', 'Flotsam and Jetsam', 'Simba']
 
     //set timer to 30 seconds per questions (5 total minutes...is that too long?)
 
@@ -55,7 +55,7 @@ $(document).ready(function () {
             minutes = "0";
         }
         else if (minutes < 10) {
-            minutes = "0" + minutes;
+            minutes = minutes;
         }
 
         return minutes + ":" + seconds;
@@ -72,7 +72,7 @@ $(document).ready(function () {
     }
     //get the value of the correct answers 
     function checkAnswers() {
-        
+
         var q1 = document.querySelector("input[name='q1']:checked").value;
         console.log(q1);
         var q2 = document.querySelector('input[name=q2]:checked').value;
@@ -93,37 +93,38 @@ $(document).ready(function () {
         console.log(q9);
         var q10 = document.querySelector('input[name=q10]:checked').value;
         console.log(q10);
+
+        //create a for loop that will traverse that array to compare the users choice to the correct or incorrect answers and increase the score counters 
+
+        for (let i = 1; i < 11; i++) {
+            if (eval('q' + i != ansArray[i])) {
+                console.log("You missed question number " + i + "!");
+                numOfIncorrect++;
+                $("#results").text("You answered " + numOfIncorrect + " incorrectly!");
+                
+            }
+            if (eval('q' + i) == ansArray[i]) {
+                console.log("You answered question number " + i + " correctly!");
+                numOfCorrect++;
+                $("#results2").text("You answered " + numOfCorrect + " correctly!");
+            }
+        }
     };
     //need a on submit function that submits answers 
 
     $("#questions").on("click", function () {
         timer.start();
         runTimer();
+        $("#timer").show();
     });
 
-    $("#submit").on("click", function () {
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
         checkAnswers();
-        timer.reset();
+        $("#timer").hide();
     });
 
-    //create a for loop that will traverse that array to compare the users choice to the correct or incorrect answers and increase the score counters 
-    for (let i = 0; i < numOfQuestions.length; i++) {
-        if (eval('q' + i) != ansArray[i - 1]) {
-            console.log("You missed question number " + i + "!");
-            numOfIncorrect++;
-        }
-    }
-    for (let i = 0; i < numOfQuestions.length; i++) {
-        if (eval('q' + i) == ansArray[i - 1]) {
-            console.log("You answered question number " + i) + " correctly!";
-            numOfCorrect++;
-        }
-        else {
-            numOfUnanswered++;
-            console.log("You didn't answer " + numOfUnanswered + " questions");
 
-        }
-    }
 
 
 
