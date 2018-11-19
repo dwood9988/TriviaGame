@@ -69,14 +69,10 @@ $(document).ready(function () {
             alert("Time's Up!");
             timerRunning = false;
         }
-
-        // document.getElementById("timer").innerHTML = converted;
     }
-
-
-
     //get the value of the correct answers 
     function checkAnswers() {
+        
         var q1 = document.querySelector("input[name='q1']:checked").value;
         console.log(q1);
         var q2 = document.querySelector('input[name=q2]:checked').value;
